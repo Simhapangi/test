@@ -6,9 +6,11 @@
 trigger:
 - main
 
-pool: myagentpool
+pool:
+  vmImage: ubuntu-latest
 
 steps:
+
 - task: PipAuthenticate@1
   inputs:
     feedUrl: 'https://dev.azure.com/SimhaP/'
@@ -24,6 +26,7 @@ steps:
   inputs:
     scriptSource: 'inline'
     script: |
-      for i in range(7):
-            print(i)
+      rows = 7
+      for i in range(1, rows - 1):
+          print(" " * (rows - 1) + " * " *i)
     arguments: 'z = 3+4i'
