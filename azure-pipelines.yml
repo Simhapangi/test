@@ -6,9 +6,7 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
-
+pool: myagentpool
 steps:
 
 - task: PipAuthenticate@1
